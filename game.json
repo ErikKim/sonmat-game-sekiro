@@ -1,0 +1,77 @@
+{
+ "name": "Sekiro: Shadows Die Twice",
+ "name_ko": "세키로",
+ "exe": "sekiro.exe",
+ "engine": "ue4",
+ "event_file": "C:\\Users\\Public\\dshaptics\\events_fmod.log",
+ "_run_note": "Hook = FMOD Ex's exported System::playSound in fmodex64.dll beside the game (dll/dshaptics_fmodex.dll): one line per wave that plays, 'ue:<wave file name>|<bank>'. No byte patterns; the game's own executable is not read. Sounds = banks inside Data1 (the public unpacker BinderTool, fetched on the player's PC; picked by path hash) + cutscene banks beside the game (sound/rm*.fsb). The game reads XInput: Steam Input on for the DualSense; turn the game's vibration off.",
+ "_controls_note": "Default pad layout (general knowledge, not read from this install): R1 attack, L1 deflect / guard, circle dodge / sprint, cross jump, square use item / interact, triangle switch prosthetic, R2 prosthetic tool, L2 grappling hook, R3 lock-on, up = healing gourd. Core loop: deflect (posture) -> deathblow. No ranged stream, no flight or minigame modes. The biggest moments: deflect, deathblow, enemy posture broken (the red deathblow mark).",
+ "_names_note": "Readable wave names are a minority (211 of 1,418 in the main bank, many inherited from older FromSoftware games - whether Sekiro still plays each one is unknown until a play log exists). Numbered waves (c/s/o/z + 9 digits) cannot be named: footsteps are taken by their number range, the rest are judged by the sound's shape (rules_auto.json). Deflect, grapple and prosthetic tools are among the numbered ones - not placed by name. Inside the bank a wave has one bare name (no folder, no extension): the event file maps several wave paths onto one stored sound - 'iron-cut-meat', 'iron-cut-meat2' and 'iron-cut-stone' are one sound stored as 'iron-cut-stone', so that name is the sword cutting flesh.",
+ "native": {
+  "dll": "dshaptics_fmodex.dll"
+ },
+ "player": ".",
+ "extra_rules": [
+  {
+   "match": "(^|/)(f\\d{9}|v\\d{9}|CURSOL|blank|dummy|body-(armor|hauberk|lobe-\\d)|breath|burning|torch|movement|fragment|dirt|wood\\.|foot\\.)",
+   "_note": "menus, voices, armour rustle, loops: never a vibration"
+  }
+ ],
+ "slots": {
+  "parry": "(^|/)(sword-x-sword|sparkx*\\d*\\.|sparkx*$)",
+  "finisher": "(^|/)kill(-kick|-successx*\\d*)?(\\.wav|$)",
+  "stagger": "(^|/)kill-chance",
+  "guard": "(^|/)(shield-(iron|wood)|shieldpress|iron-(cut|knock|stab)-iron)",
+  "death": [
+   "(^|/)voice-m-(dead|fallindead)",
+   {
+    "drawn": true,
+    "_why": "voice"
+   }
+  ],
+  "down": "(^|/)(downs|taorerumizu)",
+  "struck": [
+   "(^|/)voice-m-damage-m",
+   {
+    "drawn": true,
+    "_why": "voice"
+   }
+  ],
+  "hurt": "(^|/)(p_damage|damage_SE|damage\\d|bone_damage)",
+  "hit_heavy": "(^|/)(large-weapon-hit|hammer-hit|fdp_soulsword_hit)",
+  "hit_pierce": "(^|/)(iron-stab-meat|fdp_soulsword_stab)",
+  "hit_blunt": "(^|/)((iron|meat|wood)-knock-meat|kill-pre)",
+  "hit_light": "(^|/)(?!iron-cut-stone(\\.|$))((iron|meat|wood)-(cut|knock|stab)-(stone|wood)|wall[-_]|(meat|wood)-knock-iron)",
+  "hit": "(^|/)(iron-cut-meat|iron-cut-stone(\\.|$)|enemy_damage|c2250_blood|blood\\d)",
+  "boom": "(^|/)(molotovcocktail|magic-fire)",
+  "charge": "(^|/)(swing-stab-charge|charge-comboattack|bow-pre|bow-stance|bowgun-stance)",
+  "shot": "(^|/)(bow-shot|bow-large-shot|bowgun-shot)",
+  "buff": "(^|/)(abnormal-status-|soul-suck)",
+  "heal": "(^|/)(EST-drink|miracle-healing)",
+  "swing_heavy": "(^|/)(swing-knock-large|large-weapon-pullout|comboattack)",
+  "swing": "(^|/)(swing-(katana|sword|stab|hand|throw|knock)|taimatsu_swing|fdp_soulsword_swing)",
+  "dodge": "(^|/)body-lobe-rolling",
+  "land": "(^|/)kama_land",
+  "step_texture": "(^|/)(foot-grass|asioto-mizu|mizusibuki)",
+  "step": "(^|/)(foot-(soil|stone)|asioto-tetuho|c00000[12]0\\d\\d)",
+  "touch": "(^|/)(ITEMGET|treasurebox|izumi_kumu)",
+  "scene": "(^|/)p\\d{9}"
+ },
+ "source": {
+  "_note": "tools/soundprep.py sekiro",
+  "type": "fromsoft_fsb",
+  "steam_dir": "Sekiro",
+  "archive": "Data1",
+  "archive_files": ["/sound/main.fsb", "/sound/smain.fsb"],
+  "trees": "trees.json",
+  "hap": "hap",
+  "spk": "spk",
+  "auto_rules": "rules_auto.json",
+  "auto_gain": 0.6
+ },
+ "scenes": {
+  "trees": "trees_seq.json",
+  "dir": "seq",
+  "banks": "^rm\\d+\\.fsb$"
+ }
+}
