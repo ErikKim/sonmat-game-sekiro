@@ -5,10 +5,6 @@
  "steam_input": "on",
  "engine": "ue4",
  "event_file": "C:\\Users\\Public\\dshaptics\\events_fmod.log",
- "native": {
-  "dll": "dshaptics_fmodex.dll",
-  "places": "fmod_ids.json"
- },
  "player": ".",
  "source": {
   "type": "fromsoft_fsb",

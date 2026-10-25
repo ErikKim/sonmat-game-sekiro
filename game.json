@@ -7,8 +7,10 @@
  "_run_note": "Hook = FMOD Ex's exported System::playSound in fmodex64.dll beside the game (dll/dshaptics_fmodex.dll): one line per wave that plays, 'ue:<wave file name>|<bank>'. No byte patterns; the game's own executable is not read. Sounds = banks inside Data1 (the public unpacker BinderTool, fetched on the player's PC; picked by path hash) + cutscene banks beside the game (sound/rm*.fsb). The game reads XInput: Steam Input on for the DualSense; turn the game's vibration off.",
  "_controls_note": "Default pad layout (general knowledge, not read from this install): R1 attack, L1 deflect / guard, circle dodge / sprint, cross jump, square use item / interact, triangle switch prosthetic, R2 prosthetic tool, L2 grappling hook, R3 lock-on, up = healing gourd. Core loop: deflect (posture) -> deathblow. No ranged stream, no flight or minigame modes. The biggest moments: deflect, deathblow, enemy posture broken (the red deathblow mark).",
  "_names_note": "Readable wave names are a minority (211 of 1,418 in the main bank, many inherited from older FromSoftware games - whether Sekiro still plays each one is unknown until a play log exists). Numbered waves (c/s/o/z + 9 digits) cannot be named: footsteps are taken by their number range, the rest are judged by the sound's shape (rules_auto.json). Deflect, grapple and prosthetic tools are among the numbered ones - not placed by name. Inside the bank a wave has one bare name (no folder, no extension): the event file maps several wave paths onto one stored sound - 'iron-cut-meat', 'iron-cut-meat2' and 'iron-cut-stone' are one sound stored as 'iron-cut-stone', so that name is the sword cutting flesh.",
- "native": {
-  "dll": "dshaptics_fmodex.dll"
+ "hook": {
+  "native": {
+   "dll": "dshaptics_fmodex.dll"
+  }
  },
  "player": ".",
  "extra_rules": [
@@ -62,7 +64,10 @@
   "type": "fromsoft_fsb",
   "steam_dir": "Sekiro",
   "archive": "Data1",
-  "archive_files": ["/sound/main.fsb", "/sound/smain.fsb"],
+  "archive_files": [
+   "/sound/main.fsb",
+   "/sound/smain.fsb"
+  ],
   "trees": "trees.json",
   "hap": "hap",
   "spk": "spk",
