@@ -231,14 +231,6 @@
     14
    ]
   ],
-  "splash": [
-   [
-    110,
-    40,
-    0.12,
-    15
-   ]
-  ],
   "charge": [
    [
     100,
@@ -272,64 +264,11 @@
     ]
    }
   ],
-  "uitick": [
-   [
-    220,
-    8,
-    0.15,
-    3
-   ]
-  ],
-  "click": [
-   [
-    180,
-    12,
-    0.4,
-    5
-   ],
-   30,
-   [
-    110,
-    40,
-    0.35,
-    15
-   ]
-  ],
-  "thud": [
-   [
-    55,
-    260,
-    0.4,
-    110
-   ]
-  ],
-  "break": [
-   [
-    80,
-    120,
-    0.5,
-    50
-   ]
-  ],
   "boom": [
    [
     45,
     220,
     1.0,
-    120
-   ]
-  ],
-  "blast": [
-   [
-    50,
-    120,
-    1.0,
-    50
-   ],
-   [
-    40,
-    250,
-    0.6,
     120
    ]
   ],
@@ -339,14 +278,6 @@
     160,
     0.3,
     70
-   ]
-  ],
-  "whoosh": [
-   [
-    120,
-    60,
-    0.35,
-    25
    ]
   ],
   "soft": [
@@ -364,22 +295,6 @@
     15,
     0.3,
     5
-   ]
-  ],
-  "patter": [
-   [
-    180,
-    14,
-    0.3,
-    6
-   ]
-  ],
-  "spatter": [
-   [
-    230,
-    8,
-    0.25,
-    4
    ]
   ]
  },
@@ -600,22 +515,13 @@
   "land": "land_heavy",
   "step": "step",
   "ground": "step_sand",
-  "splash": "step_water",
   "charge": "charged",
   "heal": "heal",
   "buff": "buff",
-  "uitick": "uitick",
-  "click": "click",
-  "thud": "thud",
-  "break": "hit_wood",
   "boom": "blast",
-  "blast": "blast",
   "seq": "hit_s",
-  "whoosh": "swing_l",
   "soft": "item",
-  "tick": "shot_s",
-  "patter": "shot_s",
-  "spatter": "hit_s"
+  "tick": "shot_s"
  },
  "style": {"rough": "hit", 
   "hit": "sb",
