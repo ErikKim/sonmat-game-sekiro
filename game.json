@@ -33,14 +33,14 @@
   ],
   "down": "(^|/)(downs|taorerumizu)",
   "struck": [
-   "(^|/)voice-m-damage-m",
+   "(^|/)voice-m-damage-[ms]",
    {
     "drawn": true,
     "_why": "voice"
    }
   ],
-  "hurt": "(^|/)(p_damage|damage_SE|damage\\d|bone_damage)",
-  "hit_heavy": "(^|/)(large-weapon-hit|hammer-hit|fdp_soulsword_hit)",
+  "hurt": "(^|/)(p_damage|damage_SE|damage\\d|bone_damage|(?:c00000690[234][a-e]?|c000006930b?|c000006501|c900001009[a-d]?|c999999979b?|c999999980|c999999984b?|c999999987b|kill3)(\\.wav|$))",
+  "hit_heavy": "(^|/)(large-weapon-hit|hammer-hit|fdp_soulsword_hit|(?:c000004140|c000004171|c000004351|c000005001|c00000630[012]b?|c000006507|c000006901[a-f]?|c000007100|c000008514|c000044445b?|c000044462|c000200010b|c000210000b|c000210001|c999999900b?|c999999983|c999999993b?|s000652021b?|z999999970)(\\.wav|$))",
   "hit_pierce": "(^|/)(iron-stab-meat|fdp_soulsword_stab)",
   "hit_blunt": "(^|/)((iron|meat|wood)-knock-meat|kill-pre)",
   "hit_light": "(^|/)(?!iron-cut-stone(\\.|$))((iron|meat|wood)-(cut|knock|stab)-(stone|wood)|wall[-_]|(meat|wood)-knock-iron)",
