@@ -694,11 +694,22 @@
  },
  "snap": "(^|/)(sword-x-sword|sparkx*\\d*\\.|sparkx*$)|^pguard$|(^|/)kill(-kick|-successx*\\d*)?(\\.wav|$)|^fatal$|(^|/)kill-chance|^stagger$",
  "_made": "tools/new_profile.py from profiles/_model/model.json - first values, not felt yet",
+ "trigger_rest": {
+  "_note": "11-09: the R2 feel before any tool change is heard (was the always-on trigger \"prosthetic\", preset tool)",
+  "R2": {"pad": "R2", "effect": "weapon", "start": 2, "end": 6, "force": 6}
+ },
  "triggers": {
-  "prosthetic": {
-   "preset": "tool",
-   "match": "."
-  },
+  "_prosthetic_note": "11-09: R2 by the prosthetic tool in the arm. Changing tool plays one sound of its own (Wolf's a70-a79.tae, anim 412000-412106 at 0.1 s; a7N = EquipParamWeapon byte 227 of tool 7N000, names from WeaponName.fmg) - that sound sets the feel, the next tool's replaces it. Before the first change: trigger_rest. Feels are ours, never felt yet",
+  "tool_shuriken": {"pad": "R2", "effect": "weapon", "start": 2, "end": 4, "force": 3, "hold": 36000, "match": "(^|/)(c000400000)(\\.wav|$)", "_note": "수리검 - light: a blade thrown"},
+  "tool_firecracker": {"pad": "R2", "effect": "vibrate", "start": 2, "amp": 4, "hz": 24, "hold": 36000, "match": "(^|/)(s000300230b|s000300230c)(\\.wav|$)", "_note": "폭죽 - crackling"},
+  "tool_flame": {"pad": "R2", "effect": "vibrate", "start": 2, "amp": 5, "hz": 9, "hold": 36000, "match": "(^|/)(c000400010)(\\.wav|$)", "_note": "화통 - a low roar of fire"},
+  "tool_axe": {"pad": "R2", "effect": "weapon", "start": 4, "end": 8, "force": 8, "hold": 36000, "match": "(^|/)(c000400015)(\\.wav|$)", "_note": "도끼 - heavy: an axe swung down"},
+  "tool_raven": {"pad": "R2", "effect": "weapon", "start": 1, "end": 3, "force": 1, "hold": 36000, "match": "(^|/)(c000400030|c000400030b)(\\.wav|$)", "_note": "까마귀 - almost nothing: feathers"},
+  "tool_sabimaru": {"pad": "R2", "effect": "weapon", "start": 2, "end": 4, "force": 3, "hold": 36000, "match": "(^|/)(c000400020)(\\.wav|$)", "_note": "사비마루 - light: a dagger"},
+  "tool_umbrella": {"pad": "R2", "effect": "resist", "start": 3, "force": 150, "hold": 36000, "match": "(^|/)(c000400035)(\\.wav|$)", "_note": "우산 - a shield held open: firm all the way"},
+  "tool_abduction": {"pad": "R2", "effect": "vibrate", "start": 2, "amp": 2, "hz": 7, "hold": 36000, "match": "(^|/)(c000400040|c000400041)(\\.wav|$)", "_note": "행방불명 - a gust of wind"},
+  "tool_spear": {"pad": "R2", "effect": "bow", "start": 1, "end": 6, "force": 5, "snap": 6, "hold": 36000, "match": "(^|/)(c000400025)(\\.wav|$)", "_note": "창 - drawn back, then it shoots out"},
+  "tool_whistle": {"pad": "R2", "effect": "vibrate", "start": 2, "amp": 2, "hz": 40, "hold": 36000, "match": "(^|/)(c000400045)(\\.wav|$)", "_note": "손가락 피리 - a thin whistle"},
   "hook": {
    "preset": "wire",
    "match": "."
